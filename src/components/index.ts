@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
 import Info from './Info';
+import User from './User';
 
-export { Info };
+export { Info, User };

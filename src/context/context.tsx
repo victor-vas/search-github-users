@@ -11,9 +11,9 @@ interface GithubProviderProps {
 const GithubContext = React.createContext<any>(null);
 
 const GithubProvider = ({ children }: GithubProviderProps) => {
-  const [githubUser, setGithubUser] = useState(mockUser);
-  const [repos, setRepos] = useState(mockRepos);
-  const [followers, setFollowers] = useState(mockFollowers);
+  const [githubUser] = useState(mockUser);
+  const [repos] = useState(mockRepos);
+  const [followers] = useState(mockFollowers);
 
   return (
     <GithubContext.Provider value={{ githubUser, repos, followers }}>

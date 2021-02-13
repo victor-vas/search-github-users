@@ -1,11 +1,11 @@
-import { Info } from '../../components';
+import { Info, User } from '../../components';
 
 const Dashboard = () => {
   return (
-    <>
-      <h2>Dashboard Page</h2>
+    <main>
       <Info />
-    </>
+      <User />
+    </main>
   );
 };
 
