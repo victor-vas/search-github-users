@@ -2,19 +2,14 @@
 /* eslint-disable camelcase */
 import { useContext } from 'react';
 import { GithubContext } from '../../context/context';
+import { IFollower } from '../../context/mockData/mockFollowers';
 import Wrapper from './styled';
-
-interface IFollower {
-  avatar_url: string;
-  html_url: string;
-  login: string;
-}
 
 const Followers = () => {
   const { followers } = useContext(GithubContext);
 
   return (
-    <Wrapper className="followers-wrapper">
+    <Wrapper>
       <div className="followers">
         {followers.map(({ avatar_url, html_url, login }: IFollower) => {
           return (

@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-export interface IFollowers {
+export interface IFollower {
   login: string;
   id: number;
   node_id: string;

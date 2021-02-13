@@ -30,6 +30,20 @@ const Wrapper = styled.article`
     grid-template-rows: repeat(auto-fill, minmax(45px, 1fr));
     gap: 1.25rem 1rem;
     padding: 1rem 2rem;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var(--clr-primary-5);
+      border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--clr-primary-1);
+      border-radius: 8px;
+    }
   }
 
   article {

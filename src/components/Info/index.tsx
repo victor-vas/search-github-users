@@ -4,11 +4,12 @@ import { FiUsers, FiUserPlus } from 'react-icons/fi';
 import { useContext } from 'react';
 import { GithubContext } from '../../context/context';
 import Wrapper from './styled';
+import { IGithubUser } from '../../context/mockData/mockUser';
 
 interface ItemProps {
   icon: JSX.Element;
   label: string;
-  value: string;
+  value: number;
   color: string;
 }
 
@@ -25,9 +26,13 @@ const Item = ({ icon, label, value, color }: ItemProps) => {
 };
 
 const UserInfo = () => {
-  const data = useContext(GithubContext);
-  const { githubUser } = data;
-  const { public_repos, followers, following, public_gists } = githubUser;
+  const { githubUser } = useContext(GithubContext);
+  const {
+    public_repos,
+    followers,
+    following,
+    public_gists,
+  } = githubUser as IGithubUser;
   const items = [
     {
       id: 1,
