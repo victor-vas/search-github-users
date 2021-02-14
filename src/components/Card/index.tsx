@@ -1,11 +1,11 @@
 /* eslint-disable camelcase */
 import { useContext } from 'react';
 import { MdBusiness, MdLocationOn, MdLink } from 'react-icons/md';
-import { GithubContext } from '../../context/context';
+import { GithubContext, IGithubContext } from '../../context/context';
 import Wrapper from './styled';
 
 const Card = () => {
-  const { githubUser } = useContext(GithubContext);
+  const { githubUser } = useContext(GithubContext) as IGithubContext;
   const {
     avatar_url,
     html_url,
@@ -42,10 +42,10 @@ const Card = () => {
           </p>
         )}
         {blog && (
-          <p>
+          <a href={blog} target="_blank" rel="noreferrer">
             <MdLink />
             {` ${blog}`}
-          </p>
+          </a>
         )}
       </div>
     </Wrapper>

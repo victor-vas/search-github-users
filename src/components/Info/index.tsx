@@ -2,7 +2,7 @@
 import { GoRepo, GoGist } from 'react-icons/go';
 import { FiUsers, FiUserPlus } from 'react-icons/fi';
 import { useContext } from 'react';
-import { GithubContext } from '../../context/context';
+import { GithubContext, IGithubContext } from '../../context/context';
 import Wrapper from './styled';
 import { IGithubUser } from '../../context/mockData/mockUser';
 
@@ -26,7 +26,7 @@ const Item = ({ icon, label, value, color }: ItemProps) => {
 };
 
 const UserInfo = () => {
-  const { githubUser } = useContext(GithubContext);
+  const { githubUser } = useContext(GithubContext) as IGithubContext;
   const {
     public_repos,
     followers,

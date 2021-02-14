@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unused-prop-types */
 /* eslint-disable camelcase */
 import { useContext } from 'react';
-import { GithubContext } from '../../context/context';
+import { GithubContext, IGithubContext } from '../../context/context';
 import { IFollower } from '../../context/mockData/mockFollowers';
 import Wrapper from './styled';
 
 const Followers = () => {
-  const { followers } = useContext(GithubContext);
+  const { followers } = useContext(GithubContext) as IGithubContext;
 
   return (
     <Wrapper>

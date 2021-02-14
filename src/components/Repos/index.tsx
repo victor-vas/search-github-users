@@ -2,7 +2,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useContext } from 'react';
-import { GithubContext } from '../../context/context';
+import { GithubContext, IGithubContext } from '../../context/context';
 import { IRepo } from '../../context/mockData/mockRepos';
 import { Pie3D, Doughnut2D, Column3D, Bar3D } from '../Charts';
 import Wrapper from './styled';
@@ -14,7 +14,7 @@ export interface IChartData {
 }
 
 const Repos = () => {
-  const { repos } = useContext(GithubContext);
+  const { repos } = useContext(GithubContext) as IGithubContext;
 
   const languages = repos.reduce((total: any, item: IRepo) => {
     const { language, stargazers_count } = item;
