@@ -1,21 +1,29 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Dashboard, Login, Error } from './containers';
+import {
+  Dashboard,
+  Login,
+  Error,
+  PrivateRoute,
+  AuthWrapper,
+} from './containers';
 
 const App = () => {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Dashboard />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="*">
-          <Error />
-        </Route>
-      </Switch>
-    </Router>
+    <AuthWrapper>
+      <Router>
+        <Switch>
+          <PrivateRoute exact path="/">
+            <Dashboard />
+          </PrivateRoute>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="*">
+            <Error />
+          </Route>
+        </Switch>
+      </Router>
+    </AuthWrapper>
   );
 };
 
