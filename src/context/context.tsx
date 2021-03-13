@@ -1,7 +1,4 @@
-/* eslint-disable camelcase */
-/* eslint-disable no-shadow */
 /* eslint-disable no-console */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import mockUser, { IGithubUser } from './mockData/mockUser';
@@ -16,6 +13,7 @@ interface GithubProviderProps {
 
 export interface IGithubContext {
   githubUser: IGithubUser;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   repos: any[];
   followers: IFollower[];
   requests: number;
@@ -51,7 +49,7 @@ const GithubProvider = ({ children }: GithubProviderProps) => {
         setRequests(remaining);
 
         if (remaining === 0) {
-          toogleError(true, 'Você excedeu o limite de requisições por hora.');
+          toogleError(true, 'You have exceeded the hourly request limit.');
         }
       })
       .catch(err => console.log(err));
@@ -75,19 +73,19 @@ const GithubProvider = ({ children }: GithubProviderProps) => {
         axios(`${followers_url}?per_page=100`),
       ])
         .then(results => {
-          const [repos, followers] = results;
+          const [_repos, _followers] = results;
 
-          if (repos.status === 'fulfilled') {
-            setRepos(repos.value.data);
+          if (_repos.status === 'fulfilled') {
+            setRepos(_repos.value.data);
           }
 
-          if (followers.status === 'fulfilled') {
-            setFollowers(followers.value.data);
+          if (_followers.status === 'fulfilled') {
+            setFollowers(_followers.value.data);
           }
         })
         .catch(err => console.log(err));
     } else {
-      toogleError(true, 'Não existe usuário com esse username');
+      toogleError(true, 'There is no user with that username.');
     }
 
     checkRequests();

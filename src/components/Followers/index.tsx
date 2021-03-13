@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unused-prop-types */
-/* eslint-disable camelcase */
 import { useContext } from 'react';
 import { GithubContext, IGithubContext } from '../../context/context';
 import { IFollower } from '../../context/mockData/mockFollowers';

@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable camelcase */
 export interface IRepo {
   id: number;
   node_id: string;

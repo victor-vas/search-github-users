@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { ChangeEvent, FormEvent, useContext, useState } from 'react';
 import { MdSearch } from 'react-icons/md';
 import { GithubContext, IGithubContext } from '../../context/context';
@@ -7,7 +6,7 @@ import { Wrapper, ErrorWrapper } from './styled';
 const Search = () => {
   const [user, setUser] = useState('');
   const { requests, error, searchGithubUser, isLoading } = useContext(
-    GithubContext
+    GithubContext,
   ) as IGithubContext;
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {

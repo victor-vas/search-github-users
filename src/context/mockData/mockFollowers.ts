@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 export interface IFollower {
   login: string;
   id: number;

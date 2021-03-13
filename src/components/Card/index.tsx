@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { useContext } from 'react';
 import { MdBusiness, MdLocationOn, MdLink } from 'react-icons/md';
 import { GithubContext, IGithubContext } from '../../context/context';

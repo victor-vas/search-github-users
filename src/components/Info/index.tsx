@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { GoRepo, GoGist } from 'react-icons/go';
 import { FiUsers, FiUserPlus } from 'react-icons/fi';
 import { useContext } from 'react';
